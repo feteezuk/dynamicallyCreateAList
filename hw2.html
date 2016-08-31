@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW#2 cnit133a</title>
+	<script src="jquery.js"></script>
+	<script>
+
+	$(document).ready(function(){
+
+
+var ul = $("<ul>");
+var li = [$("<li><a>")] ;
+var h2_words = $("h2"); //already there - old h2's -existing
+var h2 = $("<h2>"); //newly created h2
+
+//h2_words.length
+
+
+
+for(var x = 0; x <h2_words.length; x++){
+	var li = $("<li><a>");
+var arr = new Array;
+
+$(li).find("a").attr("href", "#section" + x);
+
+
+$(li).find("a").append(h2_words[x].innerHTML);
+
+$(ul).append(li);
+
+}
+
+
+//This h2_words represents h2 tag that already exists
+
+$(h2_words).each(function(i){
+
+  	$(this).attr("id", "section" + i);
+  	
+
+
+});
+
+//created a clone so that the already existing h2 tags would not be affected
+
+$(h2_words).clone().each(function(i){
+
+  	$(this).attr("id", "section" + i);
+  	
+
+
+});
+
+
+
+var items = $("h2"); //old h2 stored in variable
+var items_2 = $(document).find("h2");
+
+var h2_values = new Array;
+
+
+
+	$.each(items_2, function (index, value) {
+
+		 // console.log(value.innerText );
+   	//from each, create an array from each innerText
+ 	h2_values.push(value.innerText);
+ 	//this loop grabs h2 from document, pulls it's inner Text value and pushed those values into an array. 
+
+	});
+
+
+
+
+	
+
+// console.log(h2_values); 
+
+  	 $(li).each(function(i){
+//this li function's goal is to iterate through each li 
+
+//the line below adds the attribute #section0, #section1, etc to a tag
+
+	
+
+		  //select the a tag and then change the text to specific index number from newly created array ( h2_values array )
+
+
+// $(this).find("a").attr("href", "#section" + i);
+//   		$(this).find("a").html(h2_values[i]);
+	
+ 
+ });
+
+
+
+
+
+
+
+ 	
+ 		
+ 
+
+var a = $(document).find("a");
+
+
+$(".content h1").after(ul);
+
+
+});
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+<h1>Computer Networking and Information Technology</h1>
+
+<h2>Beginning Web Development Certificate</h2></a>
+<h3>CNIT 131H</h3>
+<p>Introduction to HTML &amp; CSS – a light introduction course to HTML and inline CSS that is
+completed in 6 weeks. This course cannot be used to substitute CNIT 131 for AS Degree, only certificates. HTML, CSS and
+FTP will be learned.</p>
+<h3>CNIT 131</h3>
+<p>Internet and Beginning HTML – this is a semester-long course and you will learn about browsers,
+wired and wireless network, network security, etc. This course is part of the core courses required for AS Degree in CNIT.
+</p>
+<h3>CNIT 132:</h3>
+<p>Intermediate HTML &amp; CSS – this course contains intermediate techniques of HTML and CSS
+including principles of Responsive Web Design, CSS animation, etc. </p>
+<hr/>
+<h2>Advanced Web Development Certificate</h2>
+<h3>CNIT 133</h3>
+<p>JavaScript, jQuery, AXAX – this course starts with the basics of JavaScript up to more advanced
+techniques and will introduce jQuery and AJAX.</p>
+<h3>CNIT 134</h3>
+<p>Server-Side Technologies: ASP.NET – The use of ASP.NET techniques to create dynamic, server-side
+web pages. Using MS Visual Studio. </p>
+<hr/>
+<h2>Optional for Web Development Certificate</h2>
+<h3>CNIT 129</h3>
+<p>Web 2.0 Technologies – the study and use of different web 2.0 technologies and their integration
+within web pages. Students will develop blogs, social media pages, social bookmarking, maps, etc. </p>
+<h3>CNIT 131A</h3>
+<p>XML &amp; JSON – Introduction to XML, the use of XML to transfer data across different platforms;
+XSLT, CSS to style XML data. Introduction to JSON. </p>
+<hr/>
+<h2>Other Certificates</h2>
+<h3>Cybersecurity</h3>
+<p>For students interested in the network security area. </p>
+<h3>Advanced Cybersecurity</h3>
+<p>This certificate includes more advanced topics in the area of network security. Students will be ready
+to take some well-known industry exams in the area of network security. </p>
+<h3>Computer Technical Support</h3>
+<p>This certificate prepares students for the job positions of technical support and even with some basis
+of help desk or technical service management. </p>
+<h3>Wireless Networking</h3>
+<p>Students will be able to plan, install, and maintain wireless networks applying some basic principles
+of network security. </p>
+<h2>The new lone Ranger</h2>
+<h2>Blah Blha</h2>
+<hr/>
+</div>
+
+</body>
+</html>
